@@ -5,7 +5,7 @@ import time
 import os.path
 
 rsAPI = "https://storage.googleapis.com/osb-exchange/summary.json"
-dataRepo = "data/osbuddy"
+dataRepo = "../data/osbuddy"
 
 # One dict each for 'buy_average', 'buy_quantity', 'sell_average', 'sell_quantity', 'overall_average', 'overall_quantity'
 buy_average = []
@@ -72,7 +72,18 @@ def append_data():
         sell_quantity.append(json_data[item]["sell_quantity"])
         overall_average.append(json_data[item]["overall_average"])
         overall_quantity.append(json_data[item]["overall_quantity"])
-
+    print("BUY AVERAGE")
+    print(buy_average)
+    print("BUY QUANTITY")
+    print(buy_quantity)
+    print("SELL AVERAGE")
+    print(sell_average)
+    print("SELL QUANTITY")
+    print(sell_quantity)
+    print("OVERALL AVERAGE")
+    print(overall_average)
+    print("OVERALL QUANTITY")
+    print(overall_quantity)
     appendToCSV("buy_average", buy_average, current_timestamp)
     appendToCSV("buy_quantity", buy_quantity, current_timestamp)
     appendToCSV("sell_average", sell_average, current_timestamp)
